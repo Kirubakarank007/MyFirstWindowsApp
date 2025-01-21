@@ -12,7 +12,7 @@ namespace FirstWindowsFormsApp
 {
     public partial class login_form : Form
     {
-        bool check_username=true;
+        bool check_username = true;
         bool check_choose_day;
         public login_form()
         {
@@ -27,14 +27,14 @@ namespace FirstWindowsFormsApp
 
         private void login_Button(object sender, EventArgs e)
         {
-            string userName=userName_Input.Text;
-            string password=password_Input.Text;
+            string userName = userName_Input.Text;
+            string password = password_Input.Text;
             if (!check_choose_day)
             {
                 MessageBox.Show("Choossee your day");
 
             }
-            else if (loginday_Combobox.Text =="Sunday" || loginday_Combobox.Text== "Saturday")
+            else if (loginday_Combobox.Text == "Sunday" || loginday_Combobox.Text == "Saturday")
             {
                 MessageBox.Show("You login in holidays");
             }
@@ -55,7 +55,7 @@ namespace FirstWindowsFormsApp
             }
             else if (!termsCheck.Checked)
             {
-                MessageBox.Show("Check the terms and condition","alert",MessageBoxButtons.OK,MessageBoxIcon.Error);     
+                MessageBox.Show("Check the terms and condition", "alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -91,12 +91,12 @@ namespace FirstWindowsFormsApp
             }
         }
 
- 
+
 
         private void username_check(object sender, EventArgs e)
         {
-            MessageBox.Show("only you can enter username", "confirm",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            check_username =true;
+            MessageBox.Show("only you can enter username", "confirm", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            check_username = true;
             userName_Input.Text = "";
         }
 
@@ -110,7 +110,7 @@ namespace FirstWindowsFormsApp
 
         private void day_choose(object sender, EventArgs e)
         {
-            check_choose_day = true; 
+            check_choose_day = true;
         }
 
         private void calculate_Dob(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace FirstWindowsFormsApp
             int currentYear = DateTime.Now.Year;
             int d = dateTime_Picker.Value.Year;
             int res = (currentYear - d);
-            MessageBox.Show("Your age is " + res );
+            MessageBox.Show("Your age is " + res);
         }
     }
 }

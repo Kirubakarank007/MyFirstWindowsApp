@@ -12,6 +12,8 @@ namespace FirstWindowsFormsApp
 {
     public partial class Home_Form : Form
     {
+        bool twoDimentionClick = false;
+
         public Home_Form()
         {
             InitializeComponent();
@@ -20,6 +22,46 @@ namespace FirstWindowsFormsApp
         private void welcome_label_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void single_Click(object sender, EventArgs e)
+        {
+            string[] arr = new string[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thuresday", "Friday", "Saturday" };
+            for (int i = 0; i < arr.Length; i++)
+            {
+                dayGridView.Rows.Add(arr[i]);
+            }
+        }
+
+        private void twodimension_Click(object sender, EventArgs e)
+        {
+          if (!twoDimentionClick)
+            {
+                string[,] arr = {
+                {"1","Sunday" },
+                {"2","Monday" },
+                {"3","Tuesday" },
+                {"4","Wednesday" },
+                {"5","Thursday" },
+                {"6", "Friday"},
+                {"7","Sunday" }
+            };
+
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    string[] row = new string[arr.GetLength(1)];
+                    for (int j = 0; j < arr.GetLength(1); j++)
+                    {
+                        row[j] = arr[i, j];
+                    }
+                    noDayGridView.Rows.Add(row);
+                }
+                twoDimentionClick = true;
+            }
+            else
+            {
+                count_lbl.Text = "Already loaded";
+            }
         }
     }
 }

@@ -30,13 +30,14 @@
         {
             this.welcome_label = new System.Windows.Forms.Label();
             this.dayGridView = new System.Windows.Forms.DataGridView();
-            this.single = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.single = new System.Windows.Forms.Button();
             this.twodimension = new System.Windows.Forms.Button();
             this.noDayGridView = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dayGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDayGridView)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,13 @@
             this.dayGridView.Size = new System.Drawing.Size(252, 303);
             this.dayGridView.TabIndex = 1;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "days";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
+            // 
             // single
             // 
             this.single.Location = new System.Drawing.Point(127, 126);
@@ -73,13 +81,6 @@
             this.single.Text = "single";
             this.single.UseVisualStyleBackColor = true;
             this.single.Click += new System.EventHandler(this.single_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "days";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
             // 
             // twodimension
             // 
@@ -121,17 +122,27 @@
             // count_lbl
             // 
             this.count_lbl.AutoSize = true;
-            this.count_lbl.Location = new System.Drawing.Point(1068, 108);
+            this.count_lbl.Location = new System.Drawing.Point(776, 108);
             this.count_lbl.Name = "count_lbl";
             this.count_lbl.Size = new System.Drawing.Size(73, 20);
             this.count_lbl.TabIndex = 5;
             this.count_lbl.Text = "count_lbl";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(776, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 59);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "count_lbl";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 612);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.count_lbl);
             this.Controls.Add(this.twodimension);
             this.Controls.Add(this.noDayGridView);
@@ -160,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label count_lbl;
+        private System.Windows.Forms.Label label1;
     }
 }

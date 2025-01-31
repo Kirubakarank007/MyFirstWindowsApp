@@ -17,6 +17,7 @@ namespace FirstWindowsFormsApp
         public Home_Form()
         {
             InitializeComponent();
+            loading.Visible = false;
         }
 
         private void welcome_label_Click(object sender, EventArgs e)
@@ -33,8 +34,12 @@ namespace FirstWindowsFormsApp
             }
         }
 
+       
         private void twodimension_Click(object sender, EventArgs e)
         {
+            loading.Visible = true;
+            loading.Value=100;
+            //loading.Visible = false;
           if (!twoDimentionClick)
             {
                 string[,] arr = {
@@ -57,11 +62,17 @@ namespace FirstWindowsFormsApp
                     noDayGridView.Rows.Add(row);
                 }
                 twoDimentionClick = true;
+                loading.Visible=false;
             }
             else
             {
                 count_lbl.Text = "Already loaded";
             }
+        }
+
+        private void loading_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

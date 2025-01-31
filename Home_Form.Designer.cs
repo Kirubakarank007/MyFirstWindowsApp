@@ -37,7 +37,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.loading = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dayGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDayGridView)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             // twodimension
             // 
-            this.twodimension.Location = new System.Drawing.Point(626, 108);
+            this.twodimension.Location = new System.Drawing.Point(626, 89);
             this.twodimension.Name = "twodimension";
             this.twodimension.Size = new System.Drawing.Size(112, 59);
             this.twodimension.TabIndex = 4;
@@ -128,21 +128,19 @@
             this.count_lbl.TabIndex = 5;
             this.count_lbl.Text = "count_lbl";
             // 
-            // label1
+            // loading
             // 
-            this.label1.Location = new System.Drawing.Point(776, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 59);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "count_lbl";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.loading.Location = new System.Drawing.Point(780, 153);
+            this.loading.Name = "loading";
+            this.loading.Size = new System.Drawing.Size(171, 32);
+            this.loading.TabIndex = 6;
             // 
             // Home_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 612);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.loading);
             this.Controls.Add(this.count_lbl);
             this.Controls.Add(this.twodimension);
             this.Controls.Add(this.noDayGridView);
@@ -171,6 +169,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label count_lbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar loading;
     }
 }

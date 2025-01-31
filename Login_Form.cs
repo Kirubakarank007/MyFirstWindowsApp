@@ -42,6 +42,14 @@ namespace FirstWindowsFormsApp
             {
                 MessageBox.Show("please enter username and password");
             }
+            else if (check_username)
+            {
+                if (userName.Length != 10)
+                {
+                    MessageBox.Show("please enter correct phone number");
+
+                }
+            }
             else if (userName == "" || password == "")
             {
                 if (password == "")
@@ -75,19 +83,19 @@ namespace FirstWindowsFormsApp
 
 
         }
+        int keypress = 0;
 
         private void phone_number_Key_press(object sender, KeyPressEventArgs e)
         {
-            if (!check_username)
+            keypress++;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
-                }
-                if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf(".") > -1)
-                {
-                    e.Handled = true;
-                }
+                e.Handled = true; // Block invalid characters
+            }
+
+            if (userName_Input.Text.Length >= 10 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Prevent entering more than 10 digits
             }
         }
 
